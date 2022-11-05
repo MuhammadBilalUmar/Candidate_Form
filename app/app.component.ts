@@ -13,6 +13,9 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.CandidateForm = this.formBuilder.group({
+            Name: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
+            Phone: ['', Validators.required],
             Recruiter: ['', Validators.required],
             Company: ['', Validators.required],
             Candidate: ['', Validators.required],

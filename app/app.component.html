@@ -3,6 +3,38 @@
     <h5 class="card-header text-center">Candidate</h5>
     <div class="card-body">
         <form [formGroup]="CandidateForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label> Name</label>
+            <input
+              type="text"
+              formControlName="Name"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.Name.errors }"
+            />
+            <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+              <div *ngIf="f.Name.errors.required">Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input
+            type="text"
+            formControlName="Phone"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.Phone.errors }"
+          />
+          <div *ngIf="submitted && f.Phone.errors" class="invalid-feedback">
+            <div *ngIf="f.Phone.errors.required">Phone is required</div>
+          </div>
+        </div>
             <div class="form-group">
                 <label> Recruiter</label>
                 <input

@@ -4,40 +4,65 @@
     <div class="card-body">
         <form [formGroup]="CandidateForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label>Recruiter</label>
-                <input type="text" formControlName="Recruiter" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Recruiter.errors }" />
+                <label> Recruiter</label>
+                <input
+                  type="text"
+                  formControlName="Recruiter"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.Recruiter.errors }"
+                />
                 <div *ngIf="submitted && f.Recruiter.errors" class="invalid-feedback">
-                    <div *ngIf="f.Recruiter.required">Recruiter is required</div>
+                  <div *ngIf="f.Recruiter.errors.required">Recruiter is required</div>
                 </div>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label>Company</label>
-                <input type="text" formControlName="Company" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Company.errors }" />
+                <input
+                  type="text"
+                  formControlName="Company"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.Company.errors }"
+                />
                 <div *ngIf="submitted && f.Company.errors" class="invalid-feedback">
-                    <div *ngIf="f.Company.required">Company is required</div>
+                  <div *ngIf="f.Company.errors.required">Company is required</div>
                 </div>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label>Candidate</label>
-                <input type="text" formControlName="Candidate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Candidate.errors }" />
+                <input
+                  type="text"
+                  formControlName="Candidate"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.Candidate.errors }"
+                />
                 <div *ngIf="submitted && f.Candidate.errors" class="invalid-feedback">
-                    <div *ngIf="f.Candidate.required">Candidate is required</div>
+                  <div *ngIf="f.Candidate.errors.required">Candidate is required</div>
                 </div>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label>Merits</label>
-                <input type="text" formControlName="Merits" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Merits.errors }" />
+                <input
+                  type="text"
+                  formControlName="Merits"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.Merits.errors }"
+                />
                 <div *ngIf="submitted && f.Merits.errors" class="invalid-feedback">
-                    <div *ngIf="f.Merits.required">Merits is required</div>
+                  <div *ngIf="f.Merits.errors.required">Merits is required</div>
                 </div>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label>Attachment</label>
-                <input type="file" formControlName="Attachment" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Attachment.errors }" />
+                <input
+                  type="file"
+                  formControlName="Attachment"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.Attachment.errors }"
+                />
                 <div *ngIf="submitted && f.Attachment.errors" class="invalid-feedback">
-                    <div *ngIf="f.Attachment.required">Attachment is required</div>
+                  <div *ngIf="f.Attachment.errors.required">Attachment is required</div>
                 </div>
-            </div>
+              </div>
             <div class="text-center">
                 <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
                 <button class="btn btn-primary ml-1">Submit</button>

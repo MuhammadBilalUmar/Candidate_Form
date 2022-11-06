@@ -16,32 +16,38 @@
             <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
               <div *ngIf="f.Name.errors.required">Name is required</div>
               <div *ngIf="f.Name.errors.minlength">At least 3 characters long</div>
-              <div *ngIf="f.Name.errors.maxlength">Less than 50</div>
             </div>
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <input type="text"  maxlength="300"
+            minlength="3" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                 <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.minlength">At least 3 characters long</div>
                 <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
             </div>
         </div>
         <div class="form-group">
           <label>Phone</label>
           <input
-            type="text"
+            type="number"
+            maxlength="50"
+            minlength="3"
             formControlName="Phone"
             class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.Phone.errors }"
           />
           <div *ngIf="submitted && f.Phone.errors" class="invalid-feedback">
             <div *ngIf="f.Phone.errors.required">Phone is required</div>
+            <div *ngIf="f.Phone.errors.minlength">At least 3 characters long</div>
           </div>
         </div>
             <div class="form-group">
                 <label> Recruiter</label>
                 <input
+                maxlength="50"
+                minlength="3"
                   type="text"
                   formControlName="Recruiter"
                   class="form-control"
@@ -49,11 +55,14 @@
                 />
                 <div *ngIf="submitted && f.Recruiter.errors" class="invalid-feedback">
                   <div *ngIf="f.Recruiter.errors.required">Recruiter is required</div>
+                  <div *ngIf="f.Recruiter.errors.minlength">At least 3 characters long</div>
                 </div>
               </div>
               <div class="form-group">
                 <label>Company</label>
                 <input
+                maxlength="50"
+                minlength="3"
                   type="text"
                   formControlName="Company"
                   class="form-control"
@@ -61,11 +70,14 @@
                 />
                 <div *ngIf="submitted && f.Company.errors" class="invalid-feedback">
                   <div *ngIf="f.Company.errors.required">Company is required</div>
+                  <div *ngIf="f.Company.errors.minlength">At least 3 characters long</div>
                 </div>
               </div>
               <div class="form-group">
                 <label>Candidate</label>
                 <input
+                maxlength="50"
+                minlength="3"
                   type="text"
                   formControlName="Candidate"
                   class="form-control"
@@ -73,19 +85,23 @@
                 />
                 <div *ngIf="submitted && f.Candidate.errors" class="invalid-feedback">
                   <div *ngIf="f.Candidate.errors.required">Candidate is required</div>
+                  <div *ngIf="f.Candidate.errors.minlength">At least 3 characters long</div>
                 </div>
               </div>
               <div class="form-group">
                 <label>Merits</label>
-                <input
+                <textarea
+                maxlength="500"
+                minlength="3"
                   type="text"
                   formControlName="Merits"
                   class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f.Merits.errors }"
-                />
+                ></textarea>
                 <div *ngIf="submitted && f.Merits.errors" class="invalid-feedback">
                   <div *ngIf="f.Merits.errors.required">Merits is required</div>
                 </div>
+                <div *ngIf="f.Merits.errors.minlength">At least 3 characters long</div>
               </div>
               <div class="form-group">
                 <label>Attachment</label>
